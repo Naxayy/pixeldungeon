@@ -1,10 +1,19 @@
 import wollok.game.*
+import jugador.*
+import controles.*
 
 program Pixeldungeon {
 	game.title("Pixeldungeon")
 	game.height(10)
-	game.width(10)
+	game.width(15)
+	game.cellSize(128)
 	game.boardGround("background.png")
+	game.addVisualCharacter(finn)
+	game.addVisual(esqueleto)
+	keyboard.w().onPressDo({finn.subir()})
+	keyboard.a().onPressDo({finn.izquierda()})
+	keyboard.s().onPressDo({finn.bajar()})
+	keyboard.d().onPressDo({finn.derecha()})
 
 	game.start()
 }
