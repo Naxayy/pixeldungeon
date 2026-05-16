@@ -1,10 +1,9 @@
 import wollok.game.*
 
-program PepitaGame {
+program Pixeldungeon {
 	game.title("Pixeldungeon")
-	game.height(20)
-	game.width(30)
-	game.cellSize(32)
+	game.height(10)
+	game.width(10)
 	game.boardGround("background.png")
 
 	game.start()
