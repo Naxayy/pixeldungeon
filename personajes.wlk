@@ -1,18 +1,17 @@
 class Personaje {
-  var property position = game.center()
+  var property position = game.at(3,3)
   var property image = self.toString() + "_right.png"
 
-  method moverseAl(dir) {
+  method moverseAl(direccion) {
+    image = self.toString() + "_" + direccion + ".png"
 
-    image = self.toString() + "_" + dir + ".png"
-
-    if (dir == "up") {
+    if (direccion == "up") {
       position = position.up(1)
-    } else if (dir == "down") {
+    } else if (direccion == "down") {
       position = position.down(1)
-    } else if (dir == "left") {
+    } else if (direccion == "left") {
       position = position.left(1)
-    } else if (dir == "right") {
+    } else if (direccion == "right") {
       position = position.right(1)
     }
 

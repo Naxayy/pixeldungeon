@@ -10,20 +10,13 @@ program Pixeldungeon {
 	game.boardGround("background.png")
 
 	const finn = new Personaje()
-	const esqueleto = new Personaje()
 
 	game.addVisual(finn)
-	game.addVisual(esqueleto)
 
 	keyboard.w().onPressDo({finn.moverseAl("up")})
 	keyboard.a().onPressDo({finn.moverseAl("left")})
 	keyboard.s().onPressDo({finn.moverseAl("down")})
 	keyboard.d().onPressDo({finn.moverseAl("right")})
-
-	keyboard.up().onPressDo({esqueleto.moverseAl("up")})
-	keyboard.down().onPressDo({esqueleto.moverseAl("down")})
-	keyboard.left().onPressDo({esqueleto.moverseAl("left")})
-	keyboard.right().onPressDo({esqueleto.moverseAl("right")})
 
 	game.start()
 }
