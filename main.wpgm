@@ -1,5 +1,5 @@
 import wollok.game.*
-import jugador.*
+import personajes.*
 import controles.*
 
 program Pixeldungeon {
@@ -8,12 +8,22 @@ program Pixeldungeon {
 	game.width(15)
 	game.cellSize(128)
 	game.boardGround("background.png")
-	game.addVisualCharacter(finn)
+
+	const finn = new Personaje()
+	const esqueleto = new Personaje()
+
+	game.addVisual(finn)
 	game.addVisual(esqueleto)
-	keyboard.w().onPressDo({finn.subir()})
-	keyboard.a().onPressDo({finn.izquierda()})
-	keyboard.s().onPressDo({finn.bajar()})
-	keyboard.d().onPressDo({finn.derecha()})
+
+	keyboard.w().onPressDo({finn.moverseAl("up")})
+	keyboard.a().onPressDo({finn.moverseAl("left")})
+	keyboard.s().onPressDo({finn.moverseAl("down")})
+	keyboard.d().onPressDo({finn.moverseAl("right")})
+
+	keyboard.up().onPressDo({esqueleto.moverseAl("up")})
+	keyboard.down().onPressDo({esqueleto.moverseAl("down")})
+	keyboard.left().onPressDo({esqueleto.moverseAl("left")})
+	keyboard.right().onPressDo({esqueleto.moverseAl("right")})
 
 	game.start()
 }
