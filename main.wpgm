@@ -9,7 +9,7 @@ program Pixeldungeon {
 	game.cellSize(128)
 	game.boardGround("background.png")
 
-	const finn = new Personaje()
+	const finn = new Personaje(nombre = "finn", position = game.at(3,3))
 
 	game.addVisual(finn)
 
