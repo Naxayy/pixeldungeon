@@ -14,19 +14,36 @@ program Pixeldungeon {
 		damage = 20,
 		position = game.at(3,3))
 	
-	const esqueleto = new Personaje(
+	const esqueleto_1 = new Personaje(
 		nombre = "esqueleto",
 		salud = 50,
 		damage = 10,
 		position = game.at(5,5))
+	
+	const esqueleto_2 = new Personaje(
+		nombre = "esqueleto",
+		salud = 50,
+		damage = 10,
+		position = game.at(2,1))
+	
+	const esqueleto_3 = new Personaje(
+		nombre = "esqueleto",
+		salud = 50,
+		damage = 10,
+		position = game.at(7,7))
+	
 
 	controles.movimientosDelJugador(finn)
-	controles.ataquesDelJugadorA(finn,esqueleto)
-	
+	controles.ataquesDelJugadorA(finn,esqueleto_1)
+	controles.ataquesDelJugadorA(finn,esqueleto_2)
+	controles.ataquesDelJugadorA(finn,esqueleto_3)
+
 	game.boardGround("bg_lvl1.png")
 
 	game.addVisual(finn)
-	game.addVisual(esqueleto)
+	game.addVisual(esqueleto_1)
+	game.addVisual(esqueleto_2)
+	game.addVisual(esqueleto_3)
 
 	game.start()
 }
