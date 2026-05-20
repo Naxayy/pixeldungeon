@@ -11,7 +11,10 @@ object controles {
     method ataquesDelJugadorA(jugador,personaje) {
         keyboard.space().onPressDo({
             jugador.atacar()
-            if ((jugador.position().x() - personaje.position().x()).abs() == 1 || ((jugador.position().y() - personaje.position().y()).abs() == 1)) {
+            if (personaje.salud() <= 0) {
+                game.removeVisual(personaje)
+                game.say(jugador,"Derrote a " + personaje.nombre())
+            } else if ((jugador.position().x() - personaje.position().x()).abs() == 1 || ((jugador.position().y() - personaje.position().y()).abs() == 1)) {
                 personaje.recibirAtaqueDe(jugador)
                 game.say(personaje,"Salud: " + personaje.salud().toString())
             }
