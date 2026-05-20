@@ -21,7 +21,7 @@ program Pixeldungeon {
 		position = game.at(5,5))
 
 	controles.movimientosDelJugador(finn)
-	controles.ataquesDelJugador(finn)
+	controles.ataquesDelJugadorA(finn,esqueleto)
 	
 	game.boardGround("bg_lvl1.png")
 

@@ -1,3 +1,5 @@
+import personajes.*
+
 object controles {
     method movimientosDelJugador(jugador) {
         keyboard.w().onPressDo({jugador.moverseAl("up")})
@@ -6,7 +8,13 @@ object controles {
         keyboard.d().onPressDo({jugador.moverseAl("right")})
     }
 
-    method ataquesDelJugador(jugador) {
-        keyboard.space().onPressDo({jugador.atacar()})
+    method ataquesDelJugadorA(jugador,personaje) {
+        keyboard.space().onPressDo({
+            jugador.atacar()
+            if ((jugador.position().x() - personaje.position().x()).abs() == 1 || ((jugador.position().y() - personaje.position().y()).abs() == 1)) {
+                personaje.recibirAtaqueDe(jugador)
+                game.say(personaje,"Salud: " + personaje.salud().toString())
+            }
+        })
     }
 }
