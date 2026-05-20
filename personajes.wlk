@@ -1,5 +1,7 @@
 class Personaje {
   const nombre
+  var salud
+  const damage
   var property lookAt = "right"
   var property position
   var property image = nombre + "_" + lookAt + ".png"
@@ -21,6 +23,10 @@ class Personaje {
 
   method atacar() {
     image = nombre + "_" + lookAt + "_hit.png"
-    game.schedule(1000, { image = nombre + "_" + lookAt + ".png" })
+    game.schedule(250, { image = nombre + "_" + lookAt + ".png" })
+
+    
+
   }
+
 }

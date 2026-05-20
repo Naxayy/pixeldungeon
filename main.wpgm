@@ -8,8 +8,17 @@ program Pixeldungeon {
 	game.width(15)
 	game.cellSize(128)
 	
-	const finn = new Personaje(nombre = "finn", position = game.at(3,3))
-	const esqueleto = new Personaje(nombre = "esqueleto", position = game.at(5,5))
+	const finn = new Personaje(
+		nombre = "finn",
+		salud = 100,
+		damage = 20,
+		position = game.at(3,3))
+	
+	const esqueleto = new Personaje(
+		nombre = "esqueleto",
+		salud = 50,
+		damage = 10,
+		position = game.at(5,5))
 
 	controles.movimientosDelJugador(finn)
 	controles.ataquesDelJugador(finn)
